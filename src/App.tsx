@@ -58,7 +58,7 @@ export default function App() {
           Component: Layout,
           children: [
             {
-              path: '/',
+              index: true,
               Component: Dashboard,
               loader: protectedLoader,
             },
