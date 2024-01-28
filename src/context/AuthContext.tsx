@@ -39,8 +39,6 @@ export default function AuthProvider({
       return fakeAuthProvider.logout(() => {
         setUser(null)
         localStorage.removeItem('user')
-        const userData = localStorage.getItem('user')
-        console.log(userData, 'logoutTEST!')
         callback()
       })
     },
@@ -50,7 +48,6 @@ export default function AuthProvider({
 
   useEffect(() => {
     const userData = localStorage.getItem('user')
-    console.log('OMCE!')
 
     if (userData && !fakeAuthProvider.isAuthenticated) {
       fakeAuthProvider.login(() => {

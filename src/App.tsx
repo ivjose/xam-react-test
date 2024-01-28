@@ -1,10 +1,4 @@
-import {
-  Link,
-  Outlet,
-  RouterProvider,
-  createBrowserRouter,
-  redirect,
-} from 'react-router-dom'
+import { RouterProvider, createBrowserRouter, redirect } from 'react-router-dom'
 
 import { AuthContextType, useAuth } from './context/AuthContext'
 
@@ -12,16 +6,6 @@ import Dashboard from './Pages/Dashboard'
 import Login from './Pages/Login'
 
 import { fakeAuthProvider } from './auth'
-
-function Layout() {
-  return (
-    <div>
-      <Link to="/">HOME</Link> | <Link to="/login">Login</Link> |{' '}
-      <Link to="/logout">Logout</Link>
-      <Outlet />
-    </div>
-  )
-}
 
 async function routLoader(auth: AuthContextType) {
   const user = localStorage.getItem('user')
@@ -55,7 +39,6 @@ export default function App() {
           id: 'root',
           path: '/',
           loader: () => routLoader(auth),
-          Component: Layout,
           children: [
             {
               index: true,
