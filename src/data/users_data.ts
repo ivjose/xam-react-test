@@ -1,4 +1,14 @@
-export const users = [
+export type UserType = {
+  branchId: number
+  userName: string
+  password: string
+  firstName: string
+  middleName: string
+  lastName: string
+  position: string
+}
+
+export const users: UserType[] = [
   {
     branchId: 10001,
     userName: 'testuser01',

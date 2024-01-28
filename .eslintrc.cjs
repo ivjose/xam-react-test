@@ -42,5 +42,14 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/prop-types': 'off',
+    'jsx-a11y/label-has-associated-control': [
+      2,
+      {
+        // labelComponents: ['CustomInputLabel'],
+        labelAttributes: ['label'],
+        // controlComponents: ['CustomInput'],
+        depth: 3,
+      },
+    ],
   },
 }
