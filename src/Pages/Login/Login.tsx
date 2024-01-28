@@ -57,8 +57,6 @@ export default function Login() {
         }
       }, 3000)
     })
-
-    //
   }
 
   return (

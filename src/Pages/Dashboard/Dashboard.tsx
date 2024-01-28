@@ -15,13 +15,10 @@ function Dashboard() {
   }
 
   const handleDeleteUser = (value: UserType) => {
-    console.log(value, 'DSSSS')
-
     setUserList((current) =>
       current.filter((user) => user.branchId !== value.branchId)
     )
   }
-  console.log(handleSubmit)
 
   return (
     <Layout>

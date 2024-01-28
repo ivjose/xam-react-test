@@ -4,7 +4,6 @@ type ColumnProps<T> = {
   indexName?: string
   title: string
   render?: (item: T) => ReactElement
-  // [index: string]: string | T
 }
 
 interface TableProps<T> {
