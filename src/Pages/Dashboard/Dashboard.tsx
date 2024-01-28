@@ -3,6 +3,8 @@ import { useState } from 'react'
 import Layout from '../../components/Layout'
 
 import { users, UserType } from '../../data/users_data'
+
+import UserForm from './UserForm'
 import UserTable from './UserTable'
 
 function Dashboard() {
@@ -10,6 +12,14 @@ function Dashboard() {
 
   const handleSubmit = (values: UserType) => {
     setUserList((prevUserList) => [...prevUserList, values])
+  }
+
+  const handleDeleteUser = (value: UserType) => {
+    console.log(value, 'DSSSS')
+
+    setUserList((current) =>
+      current.filter((user) => user.branchId !== value.branchId)
+    )
   }
   console.log(handleSubmit)
 
@@ -25,7 +35,9 @@ function Dashboard() {
               Section title
             </h2>
             <div className="overflow-hidden rounded-lg bg-white shadow">
-              <div className="p-6">{/* Your content */}</div>
+              <div className="p-6">
+                <UserForm formSubmit={handleSubmit} userList={userList} />
+              </div>
             </div>
           </section>
         </div>
@@ -38,7 +50,10 @@ function Dashboard() {
             </h2>
             <div className="overflow-hidden rounded-lg bg-white shadow">
               <div className="p-6">
-                <UserTable userList={userList} />
+                <UserTable
+                  userList={userList}
+                  handleDelete={handleDeleteUser}
+                />
               </div>
             </div>
           </section>

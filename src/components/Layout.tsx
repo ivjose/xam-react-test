@@ -8,8 +8,8 @@ function Layout({ children }: { children: React.ReactNode }) {
 
   const { userName } = auth.user || { userName: '' }
   return (
-    <div>
-      <div className="mx-auto max-w-full px-2 sm:px-6 lg:px-8 bg-gray-800">
+    <div className="h-full bg-slate-200">
+      <div className="mx-auto max-w-full px-2 sm:px-6 lg:px-8 bg-gray-800 ">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden" />
           <div className="flex flex-1 items-stretch justify-start">
@@ -33,7 +33,7 @@ function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </div>
-      <main className="pt-12 pb-8 bg-slate-200">
+      <main className="pt-12 pb-8  h-auto ">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           {children}
         </div>

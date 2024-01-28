@@ -1,4 +1,4 @@
-import { useForm, type FieldValues } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -24,16 +24,11 @@ export default function Login() {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<FieldValues>({
-    defaultValues: {
-      branchId: 10003,
-      userName: 'testuser03',
-      password: 'pa55w0rd003',
-    },
-  })
+  } = useForm<UserType>()
 
   const [apiErrors, setApiErrors] = useState<string | null>(null)
-  const onSubmit = async (value: FieldValues) => {
+
+  const onSubmit = async (value: UserType) => {
     setApiErrors(null)
     const keyChecker = Object.keys(value) as LoginFieldKeys[]
 

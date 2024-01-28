@@ -1,15 +1,28 @@
 import { InputHTMLAttributes } from 'react'
-import { FieldValues, RegisterOptions, UseFormRegister } from 'react-hook-form'
+import {
+  FieldValues,
+  Path,
+  RegisterOptions,
+  UseFormRegister,
+} from 'react-hook-form'
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  id: string
+interface InputProps<T extends FieldValues>
+  extends InputHTMLAttributes<HTMLInputElement> {
+  id: Path<T>
   label: string
-  register: UseFormRegister<FieldValues>
-  rule?: RegisterOptions<FieldValues>
+  register: UseFormRegister<T>
+  rule?: RegisterOptions<T>
   error?: string
 }
 
-function Input({ label, register, id, rule, error, ...rest }: InputProps) {
+function Input<T extends FieldValues>({
+  label,
+  register,
+  id,
+  rule,
+  error,
+  ...rest
+}: InputProps<T>) {
   return (
     <>
       <div>

@@ -50,7 +50,7 @@ function Table<T>({ data, columns, rowKey, title }: TableProps<T>) {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 bg-white">
-                  {data.map((item: T) => (
+                  {data.map((item) => (
                     <tr key={`${item[`${rowKey}` as keyof typeof item]}`}>
                       {columns.map((column, index) => (
                         <td

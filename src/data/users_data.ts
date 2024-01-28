@@ -1,5 +1,5 @@
 export type UserType = {
-  branchId: number
+  branchId: number | string
   userName: string
   password: string
   firstName: string
