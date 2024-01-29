@@ -23,6 +23,8 @@
   "include": [
     "vite.config.ts",
     "vitest.config.ts",
+    "jest.setup.ts",
+    "jest.config.ts",
     ".eslintrc.cjs",
     "postcss.config.js",
     "tailwind.config.js",
